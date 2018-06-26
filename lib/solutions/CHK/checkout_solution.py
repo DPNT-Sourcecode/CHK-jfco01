@@ -43,6 +43,7 @@ def process_deal(sku, count, all_skus):
 	"""
 	inventory = {"A":50, "B":30, "C":20, "D":15, "E":40}
 
+	# HANDLE A
 	if sku == "A" and count >= 3 and count <5:
 		numdiscounts = count / 3
 		remainder = count % 3
@@ -53,6 +54,7 @@ def process_deal(sku, count, all_skus):
 		return (numdiscounts * 200) + (remainder * inventory["A"])
 	elif sku == "A" and count < 3:
 		return count * inventory["A"]
+	# HANDLE E - e's discount is greater and therefore it gets handled before B
 	elif sku == "E":
 		if count < 2:
 			return count * inventory["E"]
@@ -70,6 +72,8 @@ def process_deal(sku, count, all_skus):
 		numdiscounts = count / 2
 		remainder = count % 2
 		return (numdiscounts * 45) + (remainder * inventory["B"])
+	elif sku == "B" and count < 2:
+		return count * inventory["B"]
 	elif sku == "C":
 		return count * inventory["C"]
 	elif sku == "D":
@@ -78,4 +82,4 @@ def process_deal(sku, count, all_skus):
 		return 0
 
 
-print(checkout("AA"))
+print(checkout("EEEEBB"))
