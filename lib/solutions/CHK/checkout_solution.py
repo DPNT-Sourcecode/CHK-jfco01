@@ -56,25 +56,12 @@ def process_deal(sku, count, all_skus):
 		return count * inventory["A"]
 	# HANDLE E - e's discount is greater and therefore it gets handled before B
 	elif sku == "E":
-		if count < 2:
-			return count * inventory["E"]
-		elif count >= 2 and "B" in all_skus:
-			numdiscounts = count / 2
-			b_count = all_skus.count("B")
-			if numdiscounts <= b_count:
-				discount = numdiscounts * inventory["B"]
-			else:
-				discount = b_count * inventory["B"]
-			return (inventory["E"] * count) - discount
-		elif count >= 2 and "B" not in all_skus:
 			return inventory["E"] * count
 	elif sku == "B" and count >= 2:
 		if "E" in all_skus and all_skus.count("E") >= 2:
 			numdiscounts = all_skus.count("E") / 2
 			b_count = count - numdiscounts
-			print(b_count)
 			bdiscounts = b_count / 2
-			print(bdiscounts)
 			remainder = b_count % 2
 			return (bdiscounts * 45) + (remainder * inventory["B"])
 		else:
@@ -91,4 +78,4 @@ def process_deal(sku, count, all_skus):
 		return 0
 
 
-print(checkout("EEBBBB"))
+print(checkout("EEEEBBBB"))
