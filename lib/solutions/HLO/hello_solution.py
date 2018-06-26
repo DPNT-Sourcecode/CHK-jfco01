@@ -2,9 +2,9 @@
 
 # noinspection PyUnusedLocal
 # friend_name = unicode string
-def hello(friend_name):
-	if not isinstance(friend_name, str):
+def hello(string):
+	if not isinstance(string, str):
 		raise TypeError("Parameter must be a string.")
-	if friend_name is "":
+	if string is "":
 		raise ValueError("Name parameter cannot be blank")
-	return "Hello, {}!".format(friend_name)
+	return "Hello, {}!".format(string)
