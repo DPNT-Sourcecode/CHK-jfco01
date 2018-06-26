@@ -55,7 +55,6 @@ def process_deal(sku, count, all_skus):
 		if count < 2:
 			return count * inventory["E"]
 		elif count >= 2 and "B" in all_skus:
-			# Calc how many B's to remove from final price
 			numdiscounts = count / 2
 			b_count = all_skus.count("B")
 			return (inventory["E"] * count) - ((inventory["B"] * b_count))
@@ -74,3 +73,4 @@ def process_deal(sku, count, all_skus):
 
 
 print(process_deal("E", 6, "EEEEEBBBB"))
+print(6 % 3)
