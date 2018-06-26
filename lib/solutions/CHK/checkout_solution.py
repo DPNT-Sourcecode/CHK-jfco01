@@ -60,9 +60,11 @@ def process_deal(sku, count, all_skus):
 			# 'get b count then check how many of those are free'
 
 			free = b_count - numdiscounts
-			print(b_count, numdiscounts)
+			if numdiscounts <= b_count:
+				discount = numdiscounts * inventory["B"]
+				print(discount)
 
-			return (inventory["E"] * count) - ((inventory["B"] * b_count))
+			return (inventory["E"] * count) - discount
 		elif count >= 2 and "B" not in all_skus:
 			return inventory["E"] * count
 	elif sku == "B" and count >= 2:
@@ -77,5 +79,4 @@ def process_deal(sku, count, all_skus):
 		return 0
 
 
-print(process_deal("E", 6, "EEEEEBBBB"))
-print(6 % 3)
+print(process_deal("E", 6, "EEEBB"))
