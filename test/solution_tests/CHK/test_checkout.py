@@ -35,7 +35,7 @@ class TestHello(unittest.TestCase):
         self.assertEqual(checkout_solution.checkout("EEB"), 80)
     
     def test_checkout_more_e_than_b_deal(self):
-        self.assertEqual(checkout_solution.checkout("EEEEB"), 160) 
+        self.assertEqual(checkout_solution.checkout("EEEEB"), 190) 
 
     def test_checkout_more_b_than_e_deal(self):
         self.assertEqual(checkout_solution.checkout("EEBBBB"), 155)
