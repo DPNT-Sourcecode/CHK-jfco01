@@ -20,7 +20,7 @@ class TestHello(unittest.TestCase):
         self.assertEqual(checkout_solution.checkout(12345), -1)
 
     def test_checkout_doesnt_exist(self):
-        self.assertEqual(checkout_solution.checkout("ABCDEFGHIJKLMNOP"), -1)
+        self.assertEqual(checkout_solution.checkout("ABCDFGHIJKLMNOP"), -1)
 
     def test_checkout_lowercase(self):
         self.assertEqual(checkout_solution.checkout("aABC"), -1)
