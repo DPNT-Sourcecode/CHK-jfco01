@@ -11,9 +11,5 @@ class TestHello(unittest.TestCase):
         with self.assertRaises(TypeError):
             hello_solution.hello(1)
 
-    def test_hello_blank(self):
-        with self.assertRaises(ValueError):
-            hello_solution.hello("")
-
 if __name__ == '__main__':
     unittest.main()
