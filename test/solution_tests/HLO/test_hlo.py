@@ -8,8 +8,12 @@ class TestHello(unittest.TestCase):
         self.assertEqual(hello_solution.hello("Jim"), "Hello, Jim!")
 
     def test_hello_number(self):
-    	with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError):
             hello_solution.hello(1)
+
+    def test_hello_blank(self):
+        with self.assertRaises(ValueError):
+            hello_solution.hello("")
 
 if __name__ == '__main__':
     unittest.main()
