@@ -58,4 +58,4 @@ def process_deal(sku, count, reg_price):
 		return count * reg_price
 
 
-print(process_deal("A", 5, 50))
+print(process_deal("A", 6, 50))
