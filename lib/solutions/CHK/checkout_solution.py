@@ -5,7 +5,11 @@
 def checkout(skus):
 	if not isinstance(skus, str):
 		return -1
-	
+
+	for sku in skus:
+		if sku not in "ABCD":
+			return -1
+
 	cart_value = 0
 	def process_skus(sku, val, skus):
 		if sku in skus:
@@ -34,3 +38,5 @@ def process_deal(sku, count, reg_price):
 		return (numdiscounts * 45) + (remainder * reg_price)
 	else:
 		return count * reg_price
+
+print("a" in "AB")

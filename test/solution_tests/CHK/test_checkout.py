@@ -22,5 +22,11 @@ class TestHello(unittest.TestCase):
     def test_checkout_doesnt_exist(self):
         self.assertEqual(checkout_solution.checkout("ABCDEFGHIJKLMNOP"), -1)
 
+    def test_checkout_lowercase(self):
+        self.assertEqual(checkout_solution.checkout("aABC"), -1)
+
+    def test_checkout_punctuation(self):
+        self.assertEqual(checkout_solution.checkout("AABC!"), -1)
+
 if __name__ == '__main__':
     unittest.main()
