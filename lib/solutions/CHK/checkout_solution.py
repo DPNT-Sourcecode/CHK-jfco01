@@ -3,6 +3,9 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
+	if not isinstance(skus, str):
+		return -1
+	
 	cart_value = 0
 	def process_skus(sku, val, skus):
 		if sku in skus:

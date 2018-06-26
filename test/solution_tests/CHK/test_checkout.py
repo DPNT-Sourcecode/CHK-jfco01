@@ -16,5 +16,11 @@ class TestHello(unittest.TestCase):
     def test_checkout_no_deal(self):
         self.assertEqual(checkout_solution.checkout("CCDDC"), 90)
 
+    def test_checkout_illegal(self):
+        self.assertEqual(checkout_solution.checkout(12345), -1)
+
+    def test_checkout_doesnt_exist(self):
+        self.assertEqual(checkout_solution.checkout("ABCDEFGHIJKLMNOP"), -1)
+
 if __name__ == '__main__':
     unittest.main()
