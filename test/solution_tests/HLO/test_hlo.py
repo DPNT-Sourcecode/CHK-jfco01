@@ -5,7 +5,7 @@ from solutions.HLO import hello_solution
 
 class TestHello(unittest.TestCase):
     def test_hello(self):
-        self.assertEqual(hello_solution.hello("Jim"), "Hello, Jim!")
+        self.assertEqual(hello_solution.hello("Jim"), "Hello, World!")
 
     # def test_sum_string_params(self):
     # 	with self.assertRaises(TypeError):
