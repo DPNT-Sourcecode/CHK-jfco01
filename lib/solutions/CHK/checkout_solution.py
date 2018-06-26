@@ -4,7 +4,7 @@ import string
 # skus = unicode string
 def checkout(skus):
 	# Check is STR
-	if not isinstance(skus, str) or not isinstance(skus, unicode):
+	if not isinstance(skus, str):
 		return -1
 	# Check if valid sku
 	for sku in skus:
@@ -15,7 +15,7 @@ def checkout(skus):
 		if sku in string.punctuation:
 			return -1
 
-	if skus == None or skus == "" or skus == " ":
+	if skus == None:
 		return -1
 
 	cart_value = 0
@@ -47,4 +47,4 @@ def process_deal(sku, count, reg_price):
 	else:
 		return count * reg_price
 
-print(checkout(u"B"))
+print(checkout(''))
