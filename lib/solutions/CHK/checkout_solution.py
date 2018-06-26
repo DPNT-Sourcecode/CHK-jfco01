@@ -3,8 +3,8 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-
-    raise NotImplementedError()
+	cart_value = 0
+	A = skus.count("C")
 
 def process_deal(sku, count, reg_price):
 	"""
@@ -24,4 +24,4 @@ def process_deal(sku, count, reg_price):
 		return count * reg_price
 
 
-print(process_deal("B", 7, 30))
+print(checkout("AAAV"))
