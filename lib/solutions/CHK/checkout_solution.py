@@ -51,6 +51,8 @@ def process_deal(sku, count, all_skus):
 		numdiscounts = count / 5
 		remainder = count % 5 
 		return (numdiscounts * 200) + (remainder * inventory["A"])
+	elif sku == "A" and count < 3:
+		return count * inventory["A"]
 	elif sku == "E":
 		if count < 2:
 			return count * inventory["E"]
@@ -76,4 +78,4 @@ def process_deal(sku, count, all_skus):
 		return 0
 
 
-print(process_deal("E", 2, "EEB"))
+print(checkout("AA"))
