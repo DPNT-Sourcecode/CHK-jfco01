@@ -52,3 +52,6 @@ def process_deal(sku, count, reg_price):
 		return (numdiscounts * 45) + (remainder * reg_price)
 	else:
 		return count * reg_price
+
+
+print(10 % 5)
