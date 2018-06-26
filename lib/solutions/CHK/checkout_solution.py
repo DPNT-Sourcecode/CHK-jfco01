@@ -6,15 +6,22 @@ def checkout(skus):
 
     raise NotImplementedError()
 
-def is_deal(sku, count):
+def process_deal(sku, count, reg_price):
+	"""
+	Get the number of times a discount applies, and remainder, use that to calculate
+	the final price of that sku.
+	"""
 	# Hardcoded rules here..
 	if sku == "A" and count > 3:
 		numdiscounts = count / 3
-		return numdiscounts
+		remainder = count % 3
+		return (numdiscounts * 130) + (remainder * reg_price)
 	elif sku == "B" and count > 2:
-		pass
+		numdiscounts = count / 2
+		remainder = count % 2
+		return (numdiscounts * 45) + (remainder * reg_price)
 	else:
-		return False
+		return count * reg_price
 
 
-print(is_deal("A", 7))
+print(process_deal("B", 7, 30))
