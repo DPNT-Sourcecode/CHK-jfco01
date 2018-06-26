@@ -8,3 +8,5 @@ def hello(string):
 	if string is "":
 		raise ValueError("Name parameter cannot be blank")
 	return "Hello, {}!".format(string)
+
+print(hello("Craftsman"))
