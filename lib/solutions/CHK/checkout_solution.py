@@ -21,11 +21,11 @@ def process_deal(sku, count, reg_price):
 	the final price of that sku.
 	"""
 	# Hardcoded rules here..
-	if sku == "A" and count > 3:
+	if sku == "A" and count >= 3:
 		numdiscounts = count / 3
 		remainder = count % 3
 		return (numdiscounts * 130) + (remainder * reg_price)
-	elif sku == "B" and count > 2:
+	elif sku == "B" and count >= 2:
 		numdiscounts = count / 2
 		remainder = count % 2
 		return (numdiscounts * 45) + (remainder * reg_price)
