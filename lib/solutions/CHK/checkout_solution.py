@@ -4,7 +4,16 @@
 # skus = unicode string
 def checkout(skus):
 	cart_value = 0
-	A = skus.count("C")
+	def process_skus(sku, val, skus):
+		if sku in skus:
+			return process_deal(sku, skus.count(sku), 50)
+		else:
+			return = 0
+
+	for k, v in {"A":50, "B":30, "C":20, "D":15}:
+		cart_value += process_skus(k, v, skus)
+
+	return cart_value
 
 def process_deal(sku, count, reg_price):
 	"""
@@ -22,6 +31,3 @@ def process_deal(sku, count, reg_price):
 		return (numdiscounts * 45) + (remainder * reg_price)
 	else:
 		return count * reg_price
-
-
-print(checkout("AAAV"))
