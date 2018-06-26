@@ -31,7 +31,7 @@ def checkout(skus):
 		else:
 			return 0
 
-	for k, v in {"A":50, "B":30, "C":20, "D":15}.items():
+	for k, v in {"A":50, "B":30, "C":20, "D":15, "E":40}.items():
 		cart_value += process_skus(k, v, skus)
 
 	return cart_value
@@ -42,10 +42,14 @@ def process_deal(sku, count, reg_price):
 	the final price of that sku.
 	"""
 	# Hardcoded rules here..
-	if sku == "A" and count >= 3:
+	if sku == "A" and count >= 3 and count <5:
 		numdiscounts = count / 3
 		remainder = count % 3
 		return (numdiscounts * 130) + (remainder * reg_price)
+	elif sku == "A" and count >= 5:
+		numdiscounts = count / 5
+		remainder = count % 5 
+		return (numdiscounts * 200) + (remainder * reg_price)
 	elif sku == "B" and count >= 2:
 		numdiscounts = count / 2
 		remainder = count % 2
@@ -54,4 +58,4 @@ def process_deal(sku, count, reg_price):
 		return count * reg_price
 
 
-print(10 % 5)
+print(process_deal("A", 5, 50))
