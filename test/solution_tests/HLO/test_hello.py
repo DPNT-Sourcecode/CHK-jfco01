@@ -5,7 +5,7 @@ from solutions.HLO import hello_solution
 
 class TestHello(unittest.TestCase):
     def test_hello(self):
-        self.assertEqual(hello_solution.hello("Jim"), "Hello, Jim!")
+        self.assertEqual(hello_solution.hello("John"), "Hello, John!")
 
     def test_hello_number(self):
         with self.assertRaises(TypeError):
