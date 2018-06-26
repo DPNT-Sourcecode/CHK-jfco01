@@ -51,10 +51,6 @@ def process_deal(sku, count, all_skus):
 		numdiscounts = count / 5
 		remainder = count % 5 
 		return (numdiscounts * 200) + (remainder * inventory["A"])
-	elif sku == "B" and count >= 2:
-		numdiscounts = count / 2
-		remainder = count % 2
-		return (numdiscounts * 45) + (remainder * inventory["B"])
 	elif sku == "E":
 		if count < 2:
 			return count * inventory["E"]
@@ -62,6 +58,10 @@ def process_deal(sku, count, all_skus):
 			# Calc how many B's to remove from final price
 			b_count = all_skus.count("B")
 			return (inventory["E"] * count) - (inventory["B"] * b_count)
+	elif sku == "B" and count >= 2:
+		numdiscounts = count / 2
+		remainder = count % 2
+		return (numdiscounts * 45) + (remainder * inventory["B"])
 	elif sku == "C":
 		return count * inventory["C"]
 	elif sku == "D":
@@ -70,4 +70,4 @@ def process_deal(sku, count, all_skus):
 		return 0
 
 
-print(process_deal("E", 1, "EEEB"))
+print(process_deal("E", 3, "EEEBBBBB"))
