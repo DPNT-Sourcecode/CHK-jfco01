@@ -26,7 +26,16 @@ class TestHello(unittest.TestCase):
         self.assertEqual(checkout_solution.checkout("aABC"), -1)
 
     def test_checkout_punctuation(self):
-        self.assertEqual(checkout_solution.checkout("AABC!"), -1)
+        self.assertEqual(checkout_solution.checkout("AA!BC"), -1)
+
+    def test_checkout_punctuation(self):
+        self.assertEqual(checkout_solution.checkout(None), -1)
+
+    def test_checkout_space(self):
+        self.assertEqual(checkout_solution.checkout(" "), -1)
+
+    def test_checkout_empty_str(self):
+        self.assertEqual(checkout_solution.checkout(""), -1)
 
 if __name__ == '__main__':
     unittest.main()

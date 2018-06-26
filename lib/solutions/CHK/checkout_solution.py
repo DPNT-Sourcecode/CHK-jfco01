@@ -1,14 +1,22 @@
-
+import string
 
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
+	# Check is STR
 	if not isinstance(skus, str):
 		return -1
-
+	# Check if valid sku
 	for sku in skus:
 		if sku not in "ABCD":
 			return -1
+	# Check no punct
+	for sku in skus:
+		if sku in string.punctuation:
+			return -1
+
+	if skus == None or skus == "" or skus == " ":
+		return -1
 
 	cart_value = 0
 	def process_skus(sku, val, skus):
@@ -38,5 +46,3 @@ def process_deal(sku, count, reg_price):
 		return (numdiscounts * 45) + (remainder * reg_price)
 	else:
 		return count * reg_price
-
-print("a" in "AB")
