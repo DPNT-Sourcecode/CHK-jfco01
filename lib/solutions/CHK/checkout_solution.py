@@ -70,8 +70,8 @@ def process_deal(sku, count, all_skus):
 			return inventory["E"] * count
 	elif sku == "B" and count >= 2:
 		if "E" in all_skus and all_skus.count("E") >= 2:
-			e_count = all_skus.count("E")
-			return 0
+			numdiscounts = all_skus.count("E") / 2
+			return count * inventory["B"]
 		else:
 			numdiscounts = count / 2
 			remainder = count % 2
@@ -86,4 +86,4 @@ def process_deal(sku, count, all_skus):
 		return 0
 
 
-print(checkout("EEEEBB"))
+print(checkout("EEEEBBBB"))
