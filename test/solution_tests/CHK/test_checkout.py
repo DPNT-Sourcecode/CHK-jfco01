@@ -31,5 +31,8 @@ class TestHello(unittest.TestCase):
     def test_checkout_punctuation(self):
         self.assertEqual(checkout_solution.checkout(None), -1)
 
+    def test_checkout_e_b_deal(self):
+        self.assertEqual(checkout_solution.checkout("EEB"), 80)
+
 if __name__ == '__main__':
     unittest.main()

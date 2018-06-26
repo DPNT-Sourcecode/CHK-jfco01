@@ -14,7 +14,7 @@ def checkout(skus):
 
 	# Check if valid sku
 	for sku in skus:
-		if sku not in "ABCD":
+		if sku not in "ABCDE":
 			return -1
 	# Check no punct
 	for sku in skus:
@@ -57,13 +57,10 @@ def process_deal(sku, count, all_skus):
 		elif count >= 2 and "B" in all_skus:
 			numdiscounts = count / 2
 			b_count = all_skus.count("B")
-			# 'get b count then check how many of those are free'
-
-			free = b_count - numdiscounts
 			if numdiscounts <= b_count:
 				discount = numdiscounts * inventory["B"]
-				print(discount)
-
+			else:
+				discount = b_count * inventory["B"]
 			return (inventory["E"] * count) - discount
 		elif count >= 2 and "B" not in all_skus:
 			return inventory["E"] * count
@@ -79,4 +76,4 @@ def process_deal(sku, count, all_skus):
 		return 0
 
 
-print(process_deal("E", 6, "EEEBB"))
+print(process_deal("E", 6, "EEEBBBBB"))
