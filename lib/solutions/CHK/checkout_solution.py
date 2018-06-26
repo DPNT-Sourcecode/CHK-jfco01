@@ -27,7 +27,7 @@ def checkout(skus):
 	cart_value = 0
 	def process_skus(sku, val, skus):
 		if sku in skus:
-			return process_deal(sku, skus.count(sku), val)
+			return process_deal(sku, skus.count(sku), skus)
 		else:
 			return 0
 
@@ -76,4 +76,4 @@ def process_deal(sku, count, all_skus):
 		return 0
 
 
-print(process_deal("E", 6, "EEEBBBBB"))
+print(process_deal("E", 2, "EEB"))
