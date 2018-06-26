@@ -6,11 +6,11 @@ def checkout(skus):
 	cart_value = 0
 	def process_skus(sku, val, skus):
 		if sku in skus:
-			return process_deal(sku, skus.count(sku), 50)
+			return process_deal(sku, skus.count(sku), val)
 		else:
-			return = 0
+			return 0
 
-	for k, v in {"A":50, "B":30, "C":20, "D":15}:
+	for k, v in {"A":50, "B":30, "C":20, "D":15}.items():
 		cart_value += process_skus(k, v, skus)
 
 	return cart_value
