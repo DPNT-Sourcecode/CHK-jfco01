@@ -69,9 +69,13 @@ def process_deal(sku, count, all_skus):
 		elif count >= 2 and "B" not in all_skus:
 			return inventory["E"] * count
 	elif sku == "B" and count >= 2:
-		numdiscounts = count / 2
-		remainder = count % 2
-		return (numdiscounts * 45) + (remainder * inventory["B"])
+		if "E" in all_skus and all_skus.count("E") >= 2:
+			e_count = all_skus.count("E")
+			return 0
+		else:
+			numdiscounts = count / 2
+			remainder = count % 2
+			return (numdiscounts * 45) + (remainder * inventory["B"])
 	elif sku == "B" and count < 2:
 		return count * inventory["B"]
 	elif sku == "C":
